@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Youtube Video Downloader</title>
+
+  <link type="stylesheet" src="app.css"></link>
+  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div id="downloader">
+    <form id="download-form" method="get" action="/download">
+      <label id="url-label" for="url-input">Video Url:</label>
+      <input id="url-input" name="url" type="url"></input>
+      <input type="radio" value="type-direct" name="type">Youtube, other websites, direct video links.</input>
+      <input type="radio" value="type-embed" name="type">Download embed videos which are in a frame</input>
+      <label id="select-ff" for="fileFormat">Select File Format: </label>
+      <select name="fileFormat">
+        <option>mp4</option>
+        <option disabled>──────────</option>
+        <option>mp3</option>
+      </select>
+      <input type="submit" id="url-submit" value="Download">
+    </form>
+    <h3 class="hide">Video Info:</h3>
+    <p id="video-title" class="hide">Title: </p>
+    <p id="video-id" class="hide">Id: </p>
+  </div>
+</body>
+</html>
