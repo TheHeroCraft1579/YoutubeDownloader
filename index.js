@@ -12,19 +12,19 @@ const options = [];
 app.use(express.urlencoded())
 app.listen(port, () => console.log(`YoutubeDownloader listening at http://localhost:${port}`))
 
-var dom = require('jsdom')
-const { JSDOM } = dom;
+// var dom = require('jsdom')
+// const { JSDOM } = dom;
 
-JSDOM.fromFile("app/index.html", options).then(dom => {
-  console.log(dom.serialize());
-});
+//JSDOM.fromFile("app/index.html", options).then(dom => {
+// console.log(dom.serialize());
+// });
 
-const { window } = new JSDOM("", { runScripts: "outside-only"});
+// const { window } = new JSDOM("", { runScripts: "outside-only"});
 
-dom.fromFile("/app/index.html");
+// dom.fromFile("/app/index.html");
 
-window.eval(`document.body.innerHTML = "<p>Hello, world!</p>";`);
-window.document.body.children.length === 1;
+// window.eval(`document.body.innerHTML = "<p>Hello, world!</p>";`);
+// window.document.body.children.length === 1;
 
   app.get('/', (req, res) => {
     res.sendFile(__dirname + "/app/index.html");
